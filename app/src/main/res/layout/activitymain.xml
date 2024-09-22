@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Min sdk is 23(Android 6) so AppCompat isn't needed in any of my project files including themes, classes or xml layouts."
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        />
+
+    <!-- Both EditText & TextInputEdit can be wrapped with a TextInputLayout. The main difference between EditText & TextInputEditText are:
+    EditText: Limited material design compatibility with basic features and limited customization options for styling and behaviour.
+              Best used when you need a basic editable text field.
+    TextInputEditText: Full material design compatibility with more advanced styling options including themes and attributes, enhanced accessibility for users with disabilities, simplified usage/boilerplate code.
+              Best used for most use cases, especially if you want to adhere to Material Design guidelines and benefit from its enhanced features and styling options.
+    -->
+    <!-- The hint attribute can be placed in either the TextInputLayout or TextInputEditText element. Both approaches are valid and the choice often depends on your specific design preferences and requirements.
+         TextInputLayout: Sets a hint for the entire text field, including the input area and any floating labels. More common approach as it provides a consistent hint for the entire input component(TextInputLayout hint & TextInputEditText label) e.g. "Full name" TIL below.
+         TextInputEditText: Sets a hint specifically for the input area within the TextInputEditText. This can be useful if you want to have different hints for the input area and the floating label. e.g. e.g. "Email" TIL below.
+    -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Full name"
+        android:theme="@style/Theme.TextInputLayout"
+        android:id="@+id/tilFullname">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:background="@drawable/edittext_selector"
+            android:maxLength="100"
+            android:id="@+id/tietFullname"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        android:theme="@style/Theme.TextInputLayout"
+        android:id="@+id/tilEmail">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_selector"
+            android:inputType="textEmailAddress"
+            android:hint="Enter your email"
+            android:maxLength="100"
+            android:id="@+id/tietEmail"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

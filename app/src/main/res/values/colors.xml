@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"><!-- xmlns namespace declaration necessary if you're using tools:override="true" in your color tag. -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF3237</color>
+    <color name="gray">#dddddd</color>
+    <color name="colorStatusBar">#CC0000</color>
+    <!-- Should work, but doesn't work. colorPrimary remains the default & go-to color for the box stroke -->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/red</color> <!-- mtrl_textinput_default_box_stroke_color attribute is specifically used to set the default color of the box stroke (including the underline) in a TextInputLayout. If you're using the OutlinedBox theme, this attribute can override the default color set by the theme(usually colorPrimary). The tools:override="true" attribute is optional but can be useful for overriding default values during layout editing in Android Studio. -->
+</resources>

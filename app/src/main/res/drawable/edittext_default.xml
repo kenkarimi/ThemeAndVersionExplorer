@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- NB: Even if a drawable is used to override a theme, it seems we're still unable to override the default underline color.
+        What instead happens is you have two different colors on top of each other at the bottom no matter how much we thicken the stroke of the drawable underline.
+        Conclusion: The drawable is best suited to customizing how the edit text looks not necessarily overriding themes.
+     -->
+    <item android:top="-2dp" android:left="-2dp" android:right="-2dp"> <!-- Given that the border defined with tag <stroke> below is all-sided(top,left,bottom,right), to be left with the only the bottom border, we have to take the rest away. We use -2dp because it's twice the size of the stroke below(1dp), but with a negative sign before the integer dp value. -->
+        <shape android:shape="rectangle"> <!-- Shape won't be seen until a color for the tag solid is defined below. -->
+            <solid android:color="@color/white" /> <!-- Background color -->
+            <stroke android:width="1dp" android:color="@color/red" /> <!-- Border width & color on all sides(top, left, bottom, right) -->
+            <padding android:top="10dp" android:left="10dp" android:bottom="5dp"/> <!-- Doesn't work for some reason -->
+        </shape>
+    </item>
+
+</layer-list>

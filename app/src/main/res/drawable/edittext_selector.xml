@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- NB: Even if a drawable is used to override a theme, it seems we're still unable to override the default underline color.
+        What instead happens is you have two different colors on top of each other at the bottom no matter how much we thicken the stroke of the drawable underline.
+        Conclusion: The drawable is best suited to customizing how the edit text looks not necessarily overriding themes.
+     -->
+    <item android:state_focused="false" android:drawable="@drawable/edittext_default"></item>
+    <item android:state_focused="true" android:drawable="@drawable/edittext_focused"></item>
+
+</selector>
