@@ -7,6 +7,8 @@ import android.view.Window;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout tilFullname, tilEmail;
     private TextInputEditText tietFullname, tietEmail;
     private ProgressDialog dialog;
+    private MaterialCheckBox mcb;
+    private MaterialRadioButton mrbMale, mrbFemale;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,11 +44,16 @@ public class MainActivity extends AppCompatActivity {
         tilEmail = (TextInputLayout) findViewById(R.id.tilEmail);
         tietFullname = (TextInputEditText) findViewById(R.id.tietFullname);
         tietEmail = (TextInputEditText) findViewById(R.id.tietEmail);
+        mcb = (MaterialCheckBox) findViewById(R.id.mcb);
+        mrbMale = (MaterialRadioButton) findViewById(R.id.mrbMale);
+        mrbFemale = (MaterialRadioButton) findViewById(R.id.mrbFemale);
 
-        /*Devices under sdk level 21 don't have a status bar so trying to set the status bar color causes an exception, hence the below conditional that checks the sdk level before trying to set the status bar color
-        * Although the minSdk level of this project is 23, meaning we can omit the conditional and just set the status bar color, we'll still keep it as good practice just in case we ever lower the minSdk level(likely never)
-        * NOTE: An app of minSdk level 23 cannot be installed in a device running a lower version of android unless the minSdk is lowered in the app's module level build.gradle.
-        * */
+
+        /**
+         * Devices under sdk level 21 don't have a status bar so trying to set the status bar color causes an exception, hence the below conditional that checks the sdk level before trying to set the status bar color
+         * Although the minSdk level of this project is 23, meaning we can omit the conditional and just set the status bar color, we'll still keep it as good practice just in case we ever lower the minSdk level(likely never)
+         * NOTE: An app of minSdk level 23 cannot be installed in a device running a lower version of android unless the minSdk is lowered in the app's module level build.gradle.
+         */
         if(android.os.Build.VERSION.SDK_INT >= 21) {
             StatusBarColor sbc = new StatusBarColor(MainActivity.this);
             Window window = this.getWindow();

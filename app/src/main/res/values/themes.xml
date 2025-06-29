@@ -109,4 +109,21 @@
         <item name="android:colorControlActivated">@color/white</item> <!-- Specifies the color for UI elements(in this case, the circle spinner) when they are selected/activated/focused, indicating that it is currently in focus or has been interacted with. -->
     </style>
 
+    <style name="Theme.RadioButton" parent="AppTheme.Light.DarkActionBar">
+        <!-- Although the parent theme is of type Light.DarkActionBar, radio buttons styled by this theme can still be reused in activities whose app theme is Light.NoActionBar with no issues.
+             The caveat though is that they will still inherit from Light.Dark action bar. E.g. if colorAccent doesn't exist below, an activity of type Light.NoActionBar will inherit the secondaryColor from Light.DarkActionBar
+             In this project, though both Light.NoActionBar & Light.DarkActionBar have the same exact colors so that shouldn't be a problem. Furthermore, this is only ever a problem if you omit a key item from this theme's settings.
+         -->
+        <item name="colorAccent">@color/red</item> <!--If this is commented out, then the radio button 'checked' color will be inherited from the parent theme's secondaryColor(colorTeal).-->
+    </style>
+
+    <style name="Theme.CheckBox" parent="AppTheme.Light.DarkActionBar">
+        <!-- Although the parent theme is of type Light.DarkActionBar, checkboxes styled by this theme can still be reused in activities whose app theme is Light.NoActionBar with no issues.
+             The caveat though is that they will still inherit from Light.Dark action bar. E.g. if colorAccent doesn't exist below, an activity of type Light.NoActionBar will inherit the secondaryColor from Light.DarkActionBar
+             In this project, though both Light.NoActionBar & Light.DarkActionBar have the same exact colors so that shouldn't be a problem. Furthermore, this is only ever a problem if you omit a key item from this theme's settings.
+         -->
+        <item name="colorAccent">@color/red</item> <!--If this is commented out, then the radio button 'checked' color will be inherited from the parent theme's secondaryColor(teal_200).-->
+    </style>
+
+
 </resources>
